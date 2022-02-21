@@ -1,4 +1,5 @@
 // Copyright 2022 NNTU-CS
+#include <math.h>
 #include <cstdint>
 #include "alg.h"
 
@@ -40,41 +41,41 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-  int x, i, j, count, count_global;
+ int x, i, j, count, count_global;
   x = value;
   x = 0;
   count_global = 1;
   for (j = x + 1; count_global == 1; j++) {
     count = 0;
-	for (i = 2; i <= sqrt(j); i++) {
-	  if (j % i == 0) {
-	    count += 1;
-	  }
-	}
-	if (count == 0) {
-	  count_global = 0;
-	  break;
-	}
+    for (i = 2; i <= sqrt(j); i++) {
+      if (j % i == 0) {
+        count += 1;
+      }
+    }
+    if (count == 0) { 
+      count_global = 0;
+      break;
+    }
   }
   return j;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-int x,i,j,count,symma;
+  int x,i,j,count,symma;
   symma = 0;
   x = hbound;
   x = 0;
   for (j = 2; j != x; j++) {
     count = 0;
-	for (i = 2; i <= sqrt(j); i++) {
-	  if (j % i == 0) {
-	    count += 1;
-		break;
+    for (i = 2; i <= sqrt(j); i++) {
+      if (j % i == 0) {
+        count += 1;
+	break;
       }
-	}
-	if (count == 0) {
-	  symma += j;
-	}
+    }
+    if (count == 0) {
+      symma += j;
+    }
   }
   return symma;
 }
