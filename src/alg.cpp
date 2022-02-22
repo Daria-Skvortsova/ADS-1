@@ -36,7 +36,7 @@ uint64_t nPrime(uint64_t n) {
       count_global += 1;
     }
   }
-  return j - 1; 
+  return j - 1;
 }
 
 uint64_t nextPrime(uint64_t value) {
@@ -55,7 +55,7 @@ uint64_t x, i, j, count, count_global;
       break;
     }
   }
-  return j; 
+  return j;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
